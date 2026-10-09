@@ -21,3 +21,5 @@ x = 3
 # print(not t) # Logical NOT;
 # print(t != f) # Logical XOR;
 
+xs = [3, 1, 2] # Create a list
+print(xs)
