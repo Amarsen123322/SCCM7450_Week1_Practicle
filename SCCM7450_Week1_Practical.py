@@ -21,5 +21,16 @@ x = 3
 # print(not t) # Logical NOT;
 # print(t != f) # Logical XOR;
 
-xs = [3, 1, 2] # Create a list
-print(xs)
+# xs = [3, 1, 2] # Create a list
+# print(xs)
+
+# t = (1, 2, 3,4,5,6) # Tuples are created using round brackets - ()
+# print(t[0]) # Access the first element by index
+# print(t[1:4]) # Tuples can also be sliced similar to lists
+
+d = {(x, x + 1): x for x in range(10)} # Create a dictionary with tuple keys
+print(d)
+t = (5, 6) # Create a tuple
+print(type(t))
+print(d[t])
+print(d[(1, 2)])
