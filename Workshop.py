@@ -37,19 +37,33 @@ def cups_to_grams(no_of_cups, ingredient="water"):
 # print(cups_to_grams(2))            # 473.176
 # print(cups_to_grams(5))            # 1182.94
 # print(cups_to_grams(2, "flour"))   # 473.176
+#
+# def total_price(quantity, unit_price):
+#     return quantity * unit_price
+#
+# def basket_total(quantity, fruit="apple"):
+#     if fruit == "apple":
+#         unit_price = 0.50
+#     elif fruit == "mango":
+#         unit_price = 1.20
+#     else:
+#         raise ValueError("Unknown fruit: " + fruit)
+#
+#     total = total_price(quantity, unit_price)   # call the helper with 2 inputs
+#     return total                                # hand the result back
+#
+# print(basket_total(4, "mango"))   # 4 × 1.20 = 4.8
 
-def total_price(quantity, unit_price):
-    return quantity * unit_price
+import numpy as np
 
-def basket_total(quantity, fruit="apple"):
-    if fruit == "apple":
-        unit_price = 0.50
-    elif fruit == "mango":
-        unit_price = 1.20
-    else:
-        raise ValueError("Unknown fruit: " + fruit)
+def distance(a, b, metric="euclidean"):
+    gaps = b - a
+    if metric == "euclidean":
+        return np.sqrt(np.sum(gaps ** 2))
+    elif metric == "manhattan":
+        return np.sum(np.abs(gaps))
 
-    total = total_price(quantity, unit_price)   # call the helper with 2 inputs
-    return total                                # hand the result back
-
-print(basket_total(4, "mango"))   # 4 × 1.20 = 4.8
+U = np.array([2, -1, 0])
+V = np.array([1, 3, 8])
+print(distance(U, V))
+print(distance(U, V, "manhattan"))
